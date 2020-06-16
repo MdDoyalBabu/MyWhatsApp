@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:id="@+id/register_images_id"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/bang">
+
+    </ImageView>
+
+
+    <EditText
+        android:drawableStart="@drawable/email_icon"
+        android:id="@+id/register_email_id"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_images_id"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="17dp"
+        android:background="@drawable/inputs"
+        android:hint="Email"
+        android:padding="10dp" />
+
+    <EditText
+
+        android:drawableStart="@drawable/password_icon"
+        android:id="@+id/register_password_id"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_email_id"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="17dp"
+        android:background="@drawable/inputs"
+        android:hint="Password"
+        android:padding="10dp" />
+
+    <Button
+        android:textAllCaps="false"
+        android:layout_marginTop="15dp"
+        android:textColor="@android:color/background_light"
+        android:textSize="25sp"
+        android:text="Create  Account"
+        android:background="@drawable/button"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_below="@id/register_password_id"
+        android:id="@+id/register_create_button_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="21sp"
+        android:text="Already have an account ?"
+        android:id="@+id/register_already_have_an_account_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_create_button_id"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="23dp" />
+
+</RelativeLayout>

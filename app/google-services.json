@@ -1,0 +1,418 @@
+{
+  "project_info": {
+    "project_number": "722153634845",
+    "firebase_url": "https://reccylerview-33542.firebaseio.com",
+    "project_id": "reccylerview-33542",
+    "storage_bucket": "reccylerview-33542.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722153634845:android:8113421d7e13b4b937daf4",
+        "android_client_info": {
+          "package_name": "com.doyal2020.abpresentappss"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722153634845-l7sr4en0ufdmsjfdgl6n4f9tqg838vvn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doyal2020.abpresentappss",
+            "certificate_hash": "091d880b918a4205dcecbf2ac3925164bcc3ee14"
+          }
+        },
+        {
+          "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDQnHyYCCe7W0I9EoCBsOPQmZkmX-OZQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722153634845:android:ea7f1f437cdf1c5d37daf4",
+        "android_client_info": {
+          "package_name": "com.doyal2020.dataandtime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722153634845-9qlesdvgp16kohi0gm2ltkjfdc17ob5f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doyal2020.dataandtime",
+            "certificate_hash": "091d880b918a4205dcecbf2ac3925164bcc3ee14"
+          }
+        },
+        {
+          "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDQnHyYCCe7W0I9EoCBsOPQmZkmX-OZQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722153634845:android:003f1a131b58411937daf4",
+        "android_client_info": {
+          "package_name": "com.doyal2020.date"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722153634845-kfphm9puoi09nv18ke9pkmh3vgbg12mr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doyal2020.date",
+            "certificate_hash": "091d880b918a4205dcecbf2ac3925164bcc3ee14"
+          }
+        },
+        {
+          "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDQnHyYCCe7W0I9EoCBsOPQmZkmX-OZQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722153634845:android:38d01850347f61cc37daf4",
+        "android_client_info": {
+          "package_name": "com.doyal2020.excersiceproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722153634845-qq5cugl3sd6097kr64ud2jqmmmsrsm5j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doyal2020.excersiceproject",
+            "certificate_hash": "091d880b918a4205dcecbf2ac3925164bcc3ee14"
+          }
+        },
+        {
+          "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDQnHyYCCe7W0I9EoCBsOPQmZkmX-OZQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722153634845:android:aa0694caddedcefc37daf4",
+        "android_client_info": {
+          "package_name": "com.doyal2020.imagesaved123"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722153634845-i25m6hil0kcgal0pub1v4i089a2f79hg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doyal2020.imagesaved123",
+            "certificate_hash": "091d880b918a4205dcecbf2ac3925164bcc3ee14"
+          }
+        },
+        {
+          "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDQnHyYCCe7W0I9EoCBsOPQmZkmX-OZQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722153634845:android:18ce59e3b528ab9137daf4",
+        "android_client_info": {
+          "package_name": "com.doyal2020.imagesaved2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722153634845-mpqgr3tpiate86jnn5eqdh201k1f7cdb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doyal2020.imagesaved2",
+            "certificate_hash": "091d880b918a4205dcecbf2ac3925164bcc3ee14"
+          }
+        },
+        {
+          "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDQnHyYCCe7W0I9EoCBsOPQmZkmX-OZQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722153634845:android:37740fc6c0e6627837daf4",
+        "android_client_info": {
+          "package_name": "com.doyal2020.presentapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722153634845-pmqbj41nccctv01t5lsd1t4g1i5n1hqn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doyal2020.presentapps",
+            "certificate_hash": "091d880b918a4205dcecbf2ac3925164bcc3ee14"
+          }
+        },
+        {
+          "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDQnHyYCCe7W0I9EoCBsOPQmZkmX-OZQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722153634845:android:308be78bc5d889d137daf4",
+        "android_client_info": {
+          "package_name": "com.doyal2020.reccylerview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722153634845-bn3m3i1u96uviccnljgrcgl4ev6gn40k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doyal2020.reccylerview",
+            "certificate_hash": "091d880b918a4205dcecbf2ac3925164bcc3ee14"
+          }
+        },
+        {
+          "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDQnHyYCCe7W0I9EoCBsOPQmZkmX-OZQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722153634845:android:4ccb21ebccb76d6937daf4",
+        "android_client_info": {
+          "package_name": "com.doyal2020.recyclerviewlist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722153634845-014ea232od71nhtlmjvaenisckgmbb0e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doyal2020.recyclerviewlist",
+            "certificate_hash": "091d880b918a4205dcecbf2ac3925164bcc3ee14"
+          }
+        },
+        {
+          "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDQnHyYCCe7W0I9EoCBsOPQmZkmX-OZQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722153634845:android:b9023f68ec4edd2337daf4",
+        "android_client_info": {
+          "package_name": "com.doyal2020.shorabpresentapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722153634845-ipvhjn7um27r1dlhqprbeapf58cg7rhe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doyal2020.shorabpresentapp",
+            "certificate_hash": "091d880b918a4205dcecbf2ac3925164bcc3ee14"
+          }
+        },
+        {
+          "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDQnHyYCCe7W0I9EoCBsOPQmZkmX-OZQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722153634845:android:f4a5aff2930d7ac237daf4",
+        "android_client_info": {
+          "package_name": "com.doyal2020.whatsapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722153634845-0al33rpcb85i7gv8o16584e2r5gljjl0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doyal2020.whatsapps",
+            "certificate_hash": "091d880b918a4205dcecbf2ac3925164bcc3ee14"
+          }
+        },
+        {
+          "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDQnHyYCCe7W0I9EoCBsOPQmZkmX-OZQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722153634845-16j8t1n3ucgl4ulkqsk3bee907u2a8ac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
