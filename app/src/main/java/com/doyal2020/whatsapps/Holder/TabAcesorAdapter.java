@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.doyal2020.whatsapps.ChatsFragment;
 import com.doyal2020.whatsapps.ContactsFragment;
 import com.doyal2020.whatsapps.GroupFragment;
+import com.doyal2020.whatsapps.RequestFragment;
 
 public class TabAcesorAdapter extends FragmentPagerAdapter {
 
@@ -29,11 +30,15 @@ public class TabAcesorAdapter extends FragmentPagerAdapter {
                 ChatsFragment chatsFragment=new ChatsFragment();
                 return chatsFragment;
               case 1:
-                ContactsFragment contactsFragment=new ContactsFragment();
-                return contactsFragment;
+                  GroupFragment groupFragment=new GroupFragment();
+                  return groupFragment;
+
               case 2:
-                GroupFragment groupFragment=new GroupFragment();
-                return groupFragment;
+                  ContactsFragment contactsFragment=new ContactsFragment();
+                  return contactsFragment;
+           case 3:
+                  RequestFragment requestFragment=new RequestFragment();
+                  return requestFragment;
 
                 default:
                     return null;
@@ -44,7 +49,7 @@ public class TabAcesorAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
 
-        return 3;
+        return 4;
     }
 
     @Nullable
@@ -59,10 +64,13 @@ public class TabAcesorAdapter extends FragmentPagerAdapter {
                 return "Chats";
 
             case 1:
-                return "Contacts";
+                return "Group";
             case 2:
 
-                return "Group";
+                return "Contacts";
+            case 3:
+
+                return "Request";
 
             default:
                 return null;
