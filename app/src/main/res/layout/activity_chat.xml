@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"/>
 
         <ImageButton
-            android:id="@+id/send_message_button_id"
+            android:id="@+id/send_inputMessage_button_id"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:src="@drawable/send_icon" />
