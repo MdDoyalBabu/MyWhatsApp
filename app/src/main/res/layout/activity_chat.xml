@@ -30,6 +30,7 @@
 
 
         <EditText
+            android:inputType="textMultiLine"
             android:padding="10dp"
             android:hint="type message here......"
             android:id="@+id/input_send_message_id"
@@ -37,7 +38,6 @@
             android:layout_height="wrap_content"/>
 
         <ImageButton
-
             android:id="@+id/send_message_button_id"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
