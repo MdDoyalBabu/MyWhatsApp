@@ -41,7 +41,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
         mDatabase= FirebaseDatabase.getInstance().getReference("WhatsApp").child("Users");
         chatRequestDatabase= FirebaseDatabase.getInstance().getReference("WhatsApp").child("ChatRequestID");
-        contactDatabase= FirebaseDatabase.getInstance().getReference("WhatsApp").child("ContactDatabase");
+        contactDatabase= FirebaseDatabase.getInstance().getReference("WhatsApp").child("Contacts");
 
         recivedUserIID=getIntent().getExtras().get("visit_user_id").toString();
         mAuth=FirebaseAuth.getInstance();

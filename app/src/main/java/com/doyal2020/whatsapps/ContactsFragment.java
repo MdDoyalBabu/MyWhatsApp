@@ -57,7 +57,7 @@ public class ContactsFragment extends Fragment {
         mAuth=FirebaseAuth.getInstance();
         currentUserID=mAuth.getCurrentUser().getUid();
 
-        contactDatabase= FirebaseDatabase.getInstance().getReference("WhatsApp").child("ContactDatabase").child(currentUserID);
+        contactDatabase= FirebaseDatabase.getInstance().getReference("WhatsApp").child("Contacts").child(currentUserID);
         userDatabase= FirebaseDatabase.getInstance().getReference("WhatsApp").child("Users");
 
        return contactView;

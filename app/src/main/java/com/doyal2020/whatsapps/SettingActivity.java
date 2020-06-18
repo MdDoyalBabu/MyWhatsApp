@@ -223,13 +223,13 @@ public class SettingActivity extends AppCompatActivity {
 
         else {
 
-            HashMap<String,String> profileMap=new HashMap<>();
+            HashMap<String,Object> profileMap=new HashMap<>();
 
             profileMap.put("name",setUserName);
             profileMap.put("status",status);
             profileMap.put("uid",currentUserID);
 
-            mDatabase.child("Users").child(currentUserID).setValue(profileMap).
+            mDatabase.child("Users").child(currentUserID).updateChildren(profileMap).
                     addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
