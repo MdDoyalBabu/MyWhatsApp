@@ -105,6 +105,25 @@ public class ChatsFragment extends Fragment {
                                     holder.userName.setText(chatName);
                                     holder.userStatus.setText("Last seen: "+" \n"+"Date "+"Time");
 
+                                    if (dataSnapshot.child("userState").hasChild("state"))
+                                    {
+
+                                        String state=dataSnapshot.child("userState").child("state").getValue().toString();
+                                        String date=dataSnapshot.child("userState").child("date").getValue().toString();
+                                        String time=dataSnapshot.child("userState").child("time").getValue().toString();
+
+                                        if (state.equals("online")){
+                                            holder.userStatus.setText("online");
+                                        }
+                                        else  if (state.equals("offline")){
+                                            holder.userStatus.setText("Last seen:  "+date +" "+time);
+                                        }
+                                    }
+                                    else {
+                                        holder.userStatus.setText("offline");
+                                    }
+
+
 
                                     holder.itemView.setOnClickListener(new View.OnClickListener() {
                                         @Override

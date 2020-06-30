@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
     tools:context=".ChatActivity">
 
     <include
@@ -15,6 +16,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@id/chat_toolbar_id"
         android:id="@+id/private_send_message_users"
+        android:layout_above="@id/chat_lineatLayout_id"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

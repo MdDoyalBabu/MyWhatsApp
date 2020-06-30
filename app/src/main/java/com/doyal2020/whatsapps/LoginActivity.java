@@ -18,6 +18,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -29,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressDialog mProgressDialog;
 
     private FirebaseAuth mAuth;
+    private DatabaseReference userDatabase;
 
 
 
@@ -39,6 +43,8 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth=FirebaseAuth.getInstance();
         currentUser=mAuth.getCurrentUser();
+
+        userDatabase= FirebaseDatabase.getInstance().getReference("WhatsApp").child("Users");
 
 
         initializeFileds();
@@ -93,9 +99,22 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
                             if (task.isSuccessful()){
-                                mProgressDialog.dismiss();
-                                sendUserToMainActivity();
-                                Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+
+                                String currentUserId=mAuth.getCurrentUser().getUid();
+                                String  deviceToken= FirebaseInstanceId.getInstance().getToken();
+
+                                userDatabase.child(currentUserId).child("device_Token").setValue(deviceToken)
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+
+
+                                                sendUserToMainActivity();
+                                                Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                                mProgressDialog.dismiss();
+                                            }
+                                        });
+
                             }
                             else {
                                 mProgressDialog.dismiss();

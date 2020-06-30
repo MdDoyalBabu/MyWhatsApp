@@ -19,6 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserProfileActivity extends AppCompatActivity {
@@ -29,7 +31,7 @@ public class UserProfileActivity extends AppCompatActivity {
     private CircleImageView profileIamgesCircleimage;
     private Button sendMessageRequestButton,declineMessageRequestButton;
 
-    private DatabaseReference mDatabase,chatRequestDatabase,contactDatabase;
+    private DatabaseReference mDatabase,chatRequestDatabase,contactDatabase,notificationsDatabase;
     private FirebaseAuth mAuth;
 
 
@@ -42,6 +44,7 @@ public class UserProfileActivity extends AppCompatActivity {
         mDatabase= FirebaseDatabase.getInstance().getReference("WhatsApp").child("Users");
         chatRequestDatabase= FirebaseDatabase.getInstance().getReference("WhatsApp").child("ChatRequestID");
         contactDatabase= FirebaseDatabase.getInstance().getReference("WhatsApp").child("Contacts");
+        notificationsDatabase= FirebaseDatabase.getInstance().getReference("WhatsApp").child("Notifications");
 
         recivedUserIID=getIntent().getExtras().get("visit_user_id").toString();
         mAuth=FirebaseAuth.getInstance();
@@ -259,7 +262,6 @@ public class UserProfileActivity extends AppCompatActivity {
                                                 public void onComplete(@NonNull Task<Void> task) {
 
                                                     if (task.isSuccessful()){
-
                                                         sendMessageRequestButton.setEnabled(true);
                                                         current_state="Friends";
 
@@ -321,9 +323,6 @@ public class UserProfileActivity extends AppCompatActivity {
 
     private void sendChatRequest() {
 
-
-
-
         chatRequestDatabase.child(sendUserID).child(recivedUserIID)
                 .child("request_type").setValue("sent").addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -336,9 +335,27 @@ public class UserProfileActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
 
                             if (task.isSuccessful()){
-                                sendMessageRequestButton.setEnabled(true);
-                                current_state="request_sent";
-                                sendMessageRequestButton.setText("Cancel Chat Request");
+
+                                HashMap<String,String> chatNotificationsMap=new HashMap<>();
+                                chatNotificationsMap.put("from",sendUserID);
+                                chatNotificationsMap.put("type","request");
+
+                                notificationsDatabase.child(recivedUserIID).push().setValue(chatNotificationsMap)
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+
+                                                if (task.isSuccessful()){
+
+                                                    sendMessageRequestButton.setEnabled(true);
+                                                    current_state="request_sent";
+                                                    sendMessageRequestButton.setText("Cancel Chat Request");
+
+                                                }
+                                            }
+                                        });
+
+
                             }
 
                         }

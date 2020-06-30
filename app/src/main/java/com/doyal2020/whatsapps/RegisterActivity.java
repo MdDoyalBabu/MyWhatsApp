@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -94,8 +95,12 @@ public class RegisterActivity extends AppCompatActivity {
                             if (task.isSuccessful()){
 
                                 String currentUserID=mAuth.getCurrentUser().getUid();
+                                String  deviceToken= FirebaseInstanceId.getInstance().getToken();
 
                                 mDatabase.child("Users").child(currentUserID).setValue("");
+
+
+                                mDatabase.child("Users").child(currentUserID).child("device_Token").setValue(deviceToken);
 
                                 mProgressDialog.dismiss();
                                 sendUserToMainActivity();
