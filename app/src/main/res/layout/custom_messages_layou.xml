@@ -24,7 +24,24 @@
         android:textColor="@android:color/black"
         android:layout_toEndOf="@id/messages_profile_image_id"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"/>\
+
+    <ImageView
+        android:id="@+id/messsage_reciver_image_view"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="14dp"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:id="@+id/messsage_sender_image_view"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="14dp"/>
 
     <TextView
         android:textColor="@android:color/black"

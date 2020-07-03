@@ -22,27 +22,38 @@
 
 
     <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:background="@android:color/background_light"
         android:id="@+id/chat_lineatLayout_id"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-        <EditText
-            android:inputType="textMultiLine"
-            android:padding="10dp"
-            android:hint="type message here......"
-            android:id="@+id/input_send_message_id"
-            android:layout_width="330dp"
-            android:layout_height="wrap_content"/>
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:orientation="horizontal"
+        android:background="@android:color/background_light">
 
         <ImageButton
+            android:id="@+id/image_sends_files_btn"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:backgroundTint="@android:color/white"
+            android:src="@drawable/image_send_icon" />
+
+        <EditText
+            android:id="@+id/input_send_message_id"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:hint="type message here......"
+            android:maxLines="5"
+            android:padding="10dp" />
+
+        <ImageButton
+
             android:id="@+id/send_inputMessage_button_id"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="@android:color/white"
             android:src="@drawable/send_icon" />
 
     </LinearLayout>
