@@ -39,6 +39,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
@@ -68,7 +69,7 @@ public class ChatActivity extends AppCompatActivity {
     private RecyclerView myRecyclerViewList;
 
     private String currentDate,currentTime;
-    private String checker=" ",myUri=" ";
+    private String checker=" ",myUri=" ",pdf="";
     private  Uri imageUri;
 
     private StorageTask upLoadTask;
@@ -199,10 +200,20 @@ public class ChatActivity extends AppCompatActivity {
                         if (which==1)
                         {
                             checker="pdf";
+                            Intent intent=new Intent();
+                            intent.setAction(Intent.ACTION_GET_CONTENT);
+                            intent.setType("application/pdf");
+                            startActivityForResult(intent.createChooser(intent,"Select PDF Files"),438);
+
                         }
                         if (which==2)
                         {
                             checker="docx";
+
+                            Intent intent=new Intent();
+                            intent.setAction(Intent.ACTION_GET_CONTENT);
+                            intent.setType("application/msword");
+                            startActivityForResult(intent.createChooser(intent,"Select Ms Word Files"),438);
                         }
 
                     }
@@ -227,8 +238,8 @@ public class ChatActivity extends AppCompatActivity {
 
 
 
-            mProgressDialog.setTitle("Set Profile Image......");
-            mProgressDialog.setMessage("Please wait, your profile image is updating ..........");
+            mProgressDialog.setTitle("Sending Image......");
+            mProgressDialog.setMessage("Please wait, we are sending that images ..........");
             mProgressDialog.setCanceledOnTouchOutside(true);
             mProgressDialog.show();
 
@@ -236,7 +247,104 @@ public class ChatActivity extends AppCompatActivity {
             if (!checker.equals("image"))
             {
 
+                StorageReference storageReference=FirebaseStorage.getInstance().getReference().child("Document Files");
+
+                final    String sendMessageRef="Message/"+messageSenderID+"/"+messageReceiverID;
+                final String receivedMessageRef="Message/"+messageReceiverID+"/"+messageSenderID;
+
+                DatabaseReference userMessageKeyRef=mDatabase.child("Message")
+                        .child(messageSenderID).child(messageReceiverID).push();
+
+                final String messagePushID=userMessageKeyRef.getKey();
+
+
+                final StorageReference filepath=storageReference.child(messagePushID +" . " + checker);
+
+
+                filepath.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                        Task<Uri> uriTask=taskSnapshot.getStorage().getDownloadUrl();
+                        while (!uriTask.isSuccessful());
+                        Uri downlaodUri=uriTask.getResult();
+                        String pdfLink=downlaodUri.toString();
+
+                        Map messageTextBody=new HashMap();
+                        messageTextBody.put("message",pdfLink);
+                        messageTextBody.put("name",imageUri.getLastPathSegment());
+                        messageTextBody.put("type",checker);
+                        messageTextBody.put("from",messageSenderID);
+                        //image file send
+                        messageTextBody.put("to",messageReceiverID);
+                        messageTextBody.put("messageID",messagePushID);
+                        messageTextBody.put("time",currentTime);
+                        messageTextBody.put("date",currentDate);
+
+                        Map messageTextDetails=new HashMap();
+                        messageTextDetails.put(sendMessageRef+"/"+messagePushID,messageTextBody);
+                        messageTextDetails.put(receivedMessageRef+"/"+messagePushID,messageTextBody);
+
+                        mDatabase.updateChildren(messageTextDetails);
+                        mProgressDialog.dismiss();
+
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        mProgressDialog.dismiss();
+                        Toast.makeText(ChatActivity.this, "Error"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onProgress(@NonNull UploadTask.TaskSnapshot taskSnapshot) {
+
+                        double p=(100.0*taskSnapshot.getBytesTransferred())/taskSnapshot.getTotalByteCount();
+
+                        mProgressDialog.setMessage((int) p+ " % Uploading..........");
+                    }
+                });
+
+             /*   filepath.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+
+                        if (task.isSuccessful())
+                        {
+
+
+                          UploadTask.TaskSnapshot dwonload=task.getResult();
+                           pdf=dwonload.toString();
+
+
+
+
+                        }
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                        mProgressDialog.dismiss();
+                        Toast.makeText(ChatActivity.this, "Error"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onProgress(@NonNull UploadTask.TaskSnapshot taskSnapshot) {
+
+                        double p=(100.0*taskSnapshot.getBytesTransferred())/taskSnapshot.getTotalByteCount();
+
+                        mProgressDialog.setMessage((int) p+ " % Uploading..........");
+                    }
+                });
+
+
+
+              */
             }
+
             else if (checker.equals("image"))
             {
 

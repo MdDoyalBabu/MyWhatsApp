@@ -30,9 +30,9 @@
         android:id="@+id/messsage_reciver_image_view"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="55dp"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="19dp"
         android:scaleType="centerCrop" />
 
     <ImageView
@@ -41,7 +41,7 @@
         android:layout_height="150dp"
         android:scaleType="centerCrop"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="14dp"/>
+        android:layout_marginTop="19dp"/>
 
     <TextView
         android:textColor="@android:color/black"

@@ -1,15 +1,19 @@
 package com.doyal2020.whatsapps.Adapter;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.doyal2020.whatsapps.ChatActivity;
 import com.doyal2020.whatsapps.ChatsFragment;
 import com.doyal2020.whatsapps.Holder.Messages;
 import com.doyal2020.whatsapps.R;
@@ -64,7 +68,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final MessagesAdapter.MessagesViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MessagesAdapter.MessagesViewHolder holder, final int position) {
 
         String messageSenderId=mAuth.getCurrentUser().getUid();
 
@@ -123,7 +127,7 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
 
             }
         }
-        else     if (fromMessageType.equals("image"))
+        else  if (fromMessageType.equals("image"))
         {
             if (fromUserID.equals(messageSenderId))
             {
@@ -139,6 +143,36 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
                 Picasso.get().load(messages.getMessage()).into(holder.reciverMessagePicture);
 
 
+            }
+        }
+        else
+        {
+
+            if (fromUserID.equals(messageSenderId))
+            {
+                holder.senderMessagePicture.setVisibility(View.VISIBLE);
+                holder.senderMessagePicture.setBackgroundResource(R.drawable.files);
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse( messagesList.get(position).getMessage()));
+                        holder.itemView.getContext().startActivity(intent);
+                    }
+                });
+            }
+            else
+            {
+                holder.receiverProfileImages.setVisibility(View.VISIBLE);
+                holder.reciverMessagePicture.setVisibility(View.VISIBLE);
+                holder.reciverMessagePicture.setBackgroundResource(R.drawable.files);
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse( messagesList.get(position).getMessage()));
+                        holder.itemView.getContext().startActivity(intent);
+
+                    }
+                });
             }
         }
 
