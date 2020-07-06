@@ -306,43 +306,6 @@ public class ChatActivity extends AppCompatActivity {
                     }
                 });
 
-             /*   filepath.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-
-                        if (task.isSuccessful())
-                        {
-
-
-                          UploadTask.TaskSnapshot dwonload=task.getResult();
-                           pdf=dwonload.toString();
-
-
-
-
-                        }
-
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
-                        mProgressDialog.dismiss();
-                        Toast.makeText(ChatActivity.this, "Error"+e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onProgress(@NonNull UploadTask.TaskSnapshot taskSnapshot) {
-
-                        double p=(100.0*taskSnapshot.getBytesTransferred())/taskSnapshot.getTotalByteCount();
-
-                        mProgressDialog.setMessage((int) p+ " % Uploading..........");
-                    }
-                });
-
-
-
-              */
             }
 
             else if (checker.equals("image"))
